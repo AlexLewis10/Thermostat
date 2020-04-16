@@ -12,7 +12,11 @@ Thermostat.prototype.getTemperature = function() {
 };
 
 Thermostat.prototype.upTemperature = function(number) {
-  if ((this.temperature + number) > MaxTemperature) {
+  if ((this.powerMode === 'off') && ((this.temperature + number) > 32)) {
+    return this.temperature = 32
+  } else if ((this.powerMode === 'off') && ((this.temperature + number) < 32)) { 
+    return this.temperature = this.temperature + number
+  } else if ((this.temperature + number) > MaxTemperature) {
     return this.temperature = MaxTemperature
   } else {
     return this.temperature = this.temperature + number
