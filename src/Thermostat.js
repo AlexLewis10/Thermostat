@@ -2,7 +2,7 @@ const MaxTemperature = 25
 const MinTemperature = 10
 
 
-function Thermostat(temperature, powerMode) {
+function Thermostat(temperature, powerMode='on') {
   this.temperature = temperature
   this.powerMode = powerMode
 };
@@ -25,4 +25,16 @@ Thermostat.prototype.downTemperature = function(number) {
   } else {
     return this.temperature - number
   }
+}
+
+Thermostat.prototype.powerModeStatus = function() {
+  return this.powerMode
+}
+
+Thermostat.prototype.powerModeOff = function() {
+  return this.powerMode = 'off'
+}
+
+Thermostat.prototype.powerModeOn = function() {
+  return this.powerMode = 'on'
 }

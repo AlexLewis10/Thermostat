@@ -2,7 +2,7 @@ describe('Thermostat', function() {
 var thermostat; 
 
 beforeEach(function() {  
-  thermostat  = new Thermostat(20, 'on');
+  thermostat  = new Thermostat(20);
 });
 
 describe( 'temperature to start at 20', function(){
@@ -37,7 +37,23 @@ describe('the maximum default tempatrure is 25', function(){
 
 describe('power saving mode is on', function() {
   it('returns on', function() {
-    expect(thermostat.powerMode).toEqual('on')
+    expect(thermostat.powerModeStatus()).toEqual('on')
+  })
+})
+
+describe('can switch power saving mode off', function() {
+  it('returns off', function() {
+    thermostat.powerModeOff()
+    expect(thermostat.powerModeStatus()).toEqual('off')
+  })
+})
+
+describe('can switch power saving mode on again', function() {
+  it('power mode is on', function() {
+    thermostat.powerModeOff()
+    expect(thermostat.powerModeStatus()).toEqual('off')
+    thermostat.powerModeOn()
+    expect(thermostat.powerModeOn()).toEqual('on')
   })
 })
 
