@@ -3,7 +3,7 @@ const MaxTempPowerSaveOff = 32
 const MinTemperature = 10
 
 
-function Thermostat(temperature, powerMode='on') {
+function Thermostat(temperature=20, powerMode='on') {
   this.temperature = temperature
   this.powerMode = powerMode
 };
