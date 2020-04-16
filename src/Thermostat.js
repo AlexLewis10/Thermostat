@@ -1,4 +1,5 @@
 const MaxTemperature = 25
+const MaxTempPowerSaveOff = 32
 const MinTemperature = 10
 
 
@@ -12,9 +13,9 @@ Thermostat.prototype.getTemperature = function() {
 };
 
 Thermostat.prototype.upTemperature = function(number) {
-  if ((this.powerMode === 'off') && ((this.temperature + number) > 32)) {
-    return this.temperature = 32
-  } else if ((this.powerMode === 'off') && ((this.temperature + number) < 32)) { 
+  if ((this.powerMode === 'off') && ((this.temperature + number) > MaxTempPowerSaveOff)) {
+    return this.temperature = MaxTempPowerSaveOff
+  } else if ((this.powerMode === 'off') && ((this.temperature + number) < MaxTempPowerSaveOff)) { 
     return this.temperature = this.temperature + number
   } else if ((this.temperature + number) > MaxTemperature) {
     return this.temperature = MaxTemperature
