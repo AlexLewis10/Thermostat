@@ -64,6 +64,13 @@ describe('when power saving mode is off max temperature is 32', function() {
   })
 })
 
+describe('can reset the temperature to 20', function() {
+  it('getTemperature returns 20', function() {
+    thermostat.resetTemperature()
+    expect(thermostat.getTemperature()).toEqual(20)
+  })
+})
+
 
 }); 
 

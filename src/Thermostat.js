@@ -1,6 +1,7 @@
 const MaxTemperature = 25
 const MaxTempPowerSaveOff = 32
 const MinTemperature = 10
+const StartTemperature = 20
 
 
 function Thermostat(temperature=20, powerMode='on') {
@@ -42,4 +43,8 @@ Thermostat.prototype.powerModeOff = function() {
 
 Thermostat.prototype.powerModeOn = function() {
   return this.powerMode = 'on'
+}
+
+Thermostat.prototype.resetTemperature = function() {
+  return this.temperature = StartTemperature
 }
