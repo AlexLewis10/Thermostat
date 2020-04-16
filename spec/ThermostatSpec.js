@@ -57,6 +57,15 @@ describe('can switch power saving mode on again', function() {
   })
 })
 
+/*
+describe('when power saving mode is off max temperature is 32', function() {
+  it('temperature cannot go higher than 32', function() {
+    thermostat.powerModeOff()
+    expect(thermostat.)
+  })
+})
+*/
+
 }); 
 
 

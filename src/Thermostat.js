@@ -13,17 +13,17 @@ Thermostat.prototype.getTemperature = function() {
 
 Thermostat.prototype.upTemperature = function(number) {
   if ((this.temperature + number) > MaxTemperature) {
-    return MaxTemperature
+    return this.temperature = MaxTemperature
   } else {
-    return this.temperature + number
+    return this.temperature = this.temperature + number
   }
 }
 
 Thermostat.prototype.downTemperature = function(number) {
   if ((this.temperature - number) < MinTemperature) {
-    return MinTemperature
+    return this.temperature = MinTemperature
   } else {
-    return this.temperature - number
+    return this.temperature = this.temperature - number
   }
 }
 
